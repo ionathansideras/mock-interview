@@ -134,3 +134,40 @@ const companyTree = {
         },
     ],
 };
+
+// Initialize the variable to store the longest working employee's years in the company
+let longestWorkingEmployee = 0;
+
+// Function to compare the years in the company of the current employee with the longest working employee
+function compareYearsInCompany(employee) {
+    // If the current employee has worked longer than the recorded longest, update the record
+    if (employee.yearsInCompany > longestWorkingEmployee) {
+        longestWorkingEmployee = employee.yearsInCompany;
+    }
+}
+
+// Recursive function to traverse the company tree and find the longest working employee
+function getLongestWorkingEmployee(companyTree) {
+    // Base case: if the current node has no subordinates, compare its years in the company
+    if (companyTree.subordinates.length === 0) {
+        // i call the function to compare the years in the company
+        compareYearsInCompany(companyTree);
+        return;
+    }
+
+    // Compare the current node's years in the company
+    compareYearsInCompany(companyTree);
+
+    // Recursively check each subordinate
+    for (let i = 0; i < companyTree.subordinates.length; i++) {
+        getLongestWorkingEmployee(companyTree.subordinates[i]);
+    }
+}
+
+// Start the search from the root of the company tree
+getLongestWorkingEmployee(companyTree);
+
+// Output the longest working employee's years in the company
+console.log(longestWorkingEmployee);
+
+// time complexity is O(n) where n is the number of employees in the company tree.
