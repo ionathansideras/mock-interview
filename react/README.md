@@ -26,5 +26,6 @@ You will need to modify the `country` parameter to fetch data from different cou
 -   **Code quality** is the priority. We will not focus on the page's style or design.
 -   We are interested in seeing how the applicant approaches the task, their experience with React, event listeners, component props, and their ability to write clean, maintainable code.
 -   The applicant's ability to think through the problem and implement it efficiently is more important than pixel-perfect design or styling.
+-   If you use a custom hook, you will get extra points. We also check if you know about custom hooks.
 
 Good luck! 🍀
